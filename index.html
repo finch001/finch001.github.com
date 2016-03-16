@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Finch001.GitHub.com by finch001</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Finch001.GitHub.com</h1>
+      <h2 class="project-tagline"></h2>
+    </section>
+
+    <section class="main-content">
+      <h2>
+<a id="as的工程结构" class="anchor" href="#as%E7%9A%84%E5%B7%A5%E7%A8%8B%E7%BB%93%E6%9E%84" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>As的工程结构</h2>
+
+<p>Studio中有Project和Module的概念，前面说到Studio中一个窗口只能有一个项目，即Project，代表一个workspace，但是一个Project可以包含多个Module，比如你项目引用的Android Library, Java Library等，这些都可以看做是一个Module;</p>
+
+<h2>
+<a id="常用的快捷键" class="anchor" href="#%E5%B8%B8%E7%94%A8%E7%9A%84%E5%BF%AB%E6%8D%B7%E9%94%AE" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>常用的快捷键</h2>
+
+<p>注释代码(//)        Ctrl + /</p>
+
+<p>注释代码(/**/)      Ctrl + Shift + /</p>
+
+<p>格式化代码     Ctrl + Alt + L</p>
+
+<p>清除无效包引用       Alt + Ctrl + O</p>
+
+<p>查找     Ctrl + F</p>
+
+<p>查找+替换    Ctrl + R</p>
+
+<p>上下移动代码      Alt + Shift + Up/Down</p>
+
+<p>删除行   Ctrl + Y</p>
+
+<p>扩大缩小选中范围    Ctrl + W/Ctrl + Shift + W</p>
+
+<p>快捷生成结构体   Ctrl + Alt + T</p>
+
+<p>快捷覆写方法  Ctrl + O</p>
+
+<p>快捷定位到行首/尾       Ctrl + Left/Right</p>
+
+<p>折叠展开代码块   Ctrl + Plus/Minus</p>
+
+<p>折叠展开全部代码块     Ctrl + Shift + Plus,Minus</p>
+
+<p>文件方法结构  Ctrl + F12</p>
+
+<p>查找调用的位置   Ctrl + Alt + H</p>
+
+<p>大小写转换 Ctrl + Shift + U</p>
+
+<h2>
+<a id="自动导包" class="anchor" href="#%E8%87%AA%E5%8A%A8%E5%AF%BC%E5%8C%85" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>自动导包</h2>
+
+<p>我们只有每次引用一些类的时候必须要导包，而Studio可以通过设置自动导包 Preferences -&gt; Editor -&gt; Auto Import -&gt; Java 把以下选项勾上就OK了</p>
+
+<h2>
+<a id="as常用的插件" class="anchor" href="#as%E5%B8%B8%E7%94%A8%E7%9A%84%E6%8F%92%E4%BB%B6" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>as常用的插件</h2>
+
+<ol>
+<li>ButterKnife  ButterKnife 生成器，使用起来非常简单方便。</li>
+<li>GsonFormat  现在大多数服务端api都以json数据格式返回，而客户端需要根据api接口生成相应的实体类。</li>
+<li>ParcelableGenerator   Android中的序列化有两种方式，分别是实现Serializable接口和Parcelable接口，但在Android中是推荐使用Parcelable，只不过我们这种方式要比Serializable方式要繁琐，那么有了这个插件一切就ok了。</li>
+</ol>
+
+<h2>
+<a id="导入第三方的库出现的错误" class="anchor" href="#%E5%AF%BC%E5%85%A5%E7%AC%AC%E4%B8%89%E6%96%B9%E7%9A%84%E5%BA%93%E5%87%BA%E7%8E%B0%E7%9A%84%E9%94%99%E8%AF%AF" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>导入第三方的库出现的错误</h2>
+
+<p>每个Module下的 build.gradle 下的buildToolsVersion， 可能引用的库编译版本没有下载而出现的报错情况 ，可以打开 SDK Manager 查看本地你安装的 SDK Build-tools,。</p>
+
+<h2>
+<a id="gradle基本命令" class="anchor" href="#gradle%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A4" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>gradle基本命令</h2>
+
+<ul>
+<li>gradlew -v  查看下项目所用的Gradle版本</li>
+<li>gradlew clean  执行这个命令会去下载Gradle的一些依赖，清除app目录下的build文件夹</li>
+<li>gradlew build  这个命令会直接编译并生成相应的apk文件，如果看到如下字样就代表build成功了</li>
+<li>gradlew assembleDebug 编译并打Debug包</li>
+<li>gradlew assembleRelease 编译并打Release的包</li>
+</ul>
+
+<h2>
+<a id="优化android-studio编译速度" class="anchor" href="#%E4%BC%98%E5%8C%96android-studio%E7%BC%96%E8%AF%91%E9%80%9F%E5%BA%A6" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>优化Android studio编译速度</h2>
+
+<p>在项目的根目录的gradle properties中加上 
+org.gradle.daemon = true 开启编译守护进程
+org.gradle.parallel = true  开启并行编译</p>
+
+<h2>
+<a id="android手机-fildder真机抓包" class="anchor" href="#android%E6%89%8B%E6%9C%BA-fildder%E7%9C%9F%E6%9C%BA%E6%8A%93%E5%8C%85" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Android手机 Fildder真机抓包</h2>
+
+<p>Fiddler是一个http调试代理，它能 够记录所有的你电脑和互联网之间的http通讯，Fiddler 可以也可以让你检查所有的http通讯，设置断点，以及Fiddle 所有的“进出”的数据（指cookie,html,js,css等文件，这些都可以让你胡乱修改的意思）。 Fiddler 要比其他的网络调试器要更加简单，因为它仅仅暴露http通讯还有提供一个用户友好的格式。</p>
+
+<ol>
+<li>  Fiddler下载地址（<a href="http://fiddler2.com/%EF%BC%89">http://fiddler2.com/）</a>
+</li>
+<li> 安装到电脑，我的电脑系统是Win7</li>
+<li><p>打开Fiddler软件，界面和其他抓包软件大致一样，效果图如下：
+<img src="https://ooo.0o0.ooo/2016/03/16/56e9216d6fbd9.png" alt="1.png"></p></li>
+<li><p>下面我们就进入重点了，真机抓包了，首先，确保安装 Fiddler 的电脑和你的手机在同一局域网内，因为Fiddler只是一个代理，需要将手机的代理指向 PC 机，不能互相访问是不行的。</p></li>
+<li>开启Fiddler的远程连接，Fiddler 主菜单 Tools -&gt; Fiddler Options…-&gt; Connections页签，选中Allowremote computers to connect。效果图如下：
+<img src="https://ooo.0o0.ooo/2016/03/16/56e92157f1f4e.png" alt="2.png">
+</li>
+<li> 开启好远程连接之后，重启Fiddler，不然就不会更新你刚开启的远程配置</li>
+<li>下面开始设置手机端了，获取PC的IP地址，我的IP地址是：192.168.2.121</li>
+<li> 打开你的手机设置界面：
+<img src="https://ooo.0o0.ooo/2016/03/16/56e92150cd1e5.png" alt="3.png">
+<img src=".//img/4.png" alt="">
+</li>
+<li>现在就可以开始抓包了：打开Fiddler软件：
+<img src="https://ooo.0o0.ooo/2016/03/16/56e9215175325.png" alt="5.png">
+</li>
+<li>  如果你觉得抓取数据还不够方便，你可以添加过滤器：
+<img src="https://ooo.0o0.ooo/2016/03/16/56e921536f483.png" alt="6.png">
+</li>
+</ol>
+
+      <footer class="site-footer">
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
